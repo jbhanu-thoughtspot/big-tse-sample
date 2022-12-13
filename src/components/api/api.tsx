@@ -1,13 +1,3 @@
-import {
-  AccessLevelEnum,
-  Client,
-  DataController,
-  DEFAULT_CONFIGURATION,
-  FormatType1Enum,
-  MetadataController,
-  SessionController,
-  Type10Enum
-} from "@thoughtspot/rest-api-sdk";
 import { Layout, Button, Select } from "antd";
 import ReactDataGrid from "@inovua/reactdatagrid-enterprise";
 import "@inovua/reactdatagrid-enterprise/index.css";
@@ -24,7 +14,7 @@ const { Option } = Select;
 
 export const Api = () => {
   const logEvent = useEventLogger();
-  const { metadataController, dataController } = useAPIClient();
+  const { metadataController, dataController }: any = useAPIClient();
   const [options, setOptions] = React.useState([
     {
       name: "loading ...",
@@ -37,7 +27,7 @@ export const Api = () => {
   const populateAnswers = async () => {
     setLoading(true);
     const answers: any = await metadataController?.searchObjectHeader({
-      type: Type10Enum.ANSWER
+      type: 'ANSWER'
     });
     setLoading(false);
     if (answers) {

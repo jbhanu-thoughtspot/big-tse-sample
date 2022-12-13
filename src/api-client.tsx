@@ -1,12 +1,8 @@
 import {
-  AccessLevelEnum,
   Client,
   DEFAULT_CONFIGURATION,
-  FormatType1Enum,
   MetadataController,
   DataController,
-  SessionController,
-  Type10Enum
 } from "@thoughtspot/rest-api-sdk";
 import { TOKEN_ENDPOINT_API, TS_HOST } from "./constants";
 import React, { useState } from "react";
